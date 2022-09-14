@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     setBackground();
 // 不清楚原因，按理说，qrand 或者 qsrand 都可以用的。
+    //已找到原因：qt 5.15 后 qsrand 和qrand 都弃用，详情参考 qt 5.15 spec
 //    qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
     srand(QTime(0,0,0).secsTo(QTime::currentTime()));
     initGame();
